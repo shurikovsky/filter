@@ -9,9 +9,21 @@
 }
 
 .filter {
-  font-size: 15 px;
+  font-size: 15px;
   color: gray;
   margin-right: 5px;
 }
 
+.photo {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
 
