@@ -1,7 +1,10 @@
 export default function ProjectList({projects}) {
-    projects.forEach(element => {
-     return (
-       <div class='photo'>{element}</div>
-     )
-    });
-  }
+    return (
+        projects.map(element => {
+        <div class='photo'>
+          <div>{element.img}nm,.m.m
+          </div>
+        </div>
+        })
+    )
+}

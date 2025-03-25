@@ -4,7 +4,6 @@ import { useState } from 'react';
 import ProjectList from './ProjectList';
 import Toolbar from './Toolbar';
 
-//const [state, setCount] = useState(0);
 const photoElements = [{
   img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
   category: "Business Cards"
@@ -59,23 +58,26 @@ const photoElements = [{
 }];
 
 function App() {
-  const [selected, onSelectFilter] = useState('All');
- const Portfolio = {
+  let [state, setState] = useState('All');
+  let [statePhoto, setStatePhoto] = useState(photoElements)
+ let Portfolio = {
   filters: ['All', 'Websites', "Flayers", "Business Cards"],
-  selected: 'All',
-  projects: photoElements.filter((value) => {value.category === this.selected}),
+  selected: state,
+  projects: statePhoto,
   onSelectFilter: (filter) => {
-    this.selected = filter;
-}
- // const onSelectFilter = (filter) => {
- //   this.selected = filter;
+    console.log(filter);
+    setState(state = filter);
+    setStatePhoto(statePhoto = photoElements.filter((value) => value.category === state));
   }
- // const [filter, onSelectFilter] = useState('All');
+}
+
   return (
     <div class='container'>
-      <Toolbar filters={Portfolio.filters} selected={Portfolio.selected} onSelectFilter={Portfolio.onSelectFilter}/>
+      <div>
+        <Toolbar filters={Portfolio.filters} selected={Portfolio.selected} onSelectFilter={Portfolio.onSelectFilter}/>
+      </div>
       <div class='photos'>
-        <ProjectList {... Portfolio.projects}/>
+        <ProjectList projects={Portfolio.projects}/>
       </div>
     </div>
   );
