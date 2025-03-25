@@ -1,10 +1,7 @@
 export default function ProjectList({projects}) {
-    return (
-        projects.map(element => {
-        <div class='photo'>
-          <div>{element.img}nm,.m.m
-          </div>
-        </div>
-        })
-    )
+        projects.map((item, indx) => {
+            console.log(item);
+            console.log(indx);
+            return <img key={indx} src={item.img} />
+       })
 }
