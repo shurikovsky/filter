@@ -1,25 +1,33 @@
 .container {
+   margin: auto;
+   width: 900px;
    display: flex;
    flex-direction: column;
-   background-color: beige;
+   background-color: white;
 }
 
 .filters {
   display: flex;
+  background-color: white;
+  margin: 15px 0;
 }
 
 .filter {
   font-size: 17px;
   color: gray;
-  margin-right: 15px;
+  padding: 2px 8px;
+  margin-right: 5px;
+  border: 1px solid black;
 }
 
 .filter:hover {
   cursor: pointer;
-  color:blueviolet
+  color:white;
+  background: gray;
 }
 
 .photo {
+  margin-bottom: 10px;
   object-fit: cover;
   width: 100%;
   height: auto;
@@ -27,8 +35,7 @@
 }
 
 .photos {
- /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 15px; */
+  width: 100%;
+  column-count: 3;
+  gap: 10px;
 }
-

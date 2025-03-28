@@ -60,14 +60,17 @@ const photoElements = [{
 function App() {
   let [state, setState] = useState('All');
   let [statePhoto, setStatePhoto] = useState(photoElements)
- let Portfolio = {
-  filters: ['All', 'Websites', "Flayers", "Business Cards"],
-  selected: state,
-  projects: statePhoto,
-  onSelectFilter: (filter) => {
-    console.log(filter);
-    setState(state = filter);
-    setStatePhoto(statePhoto = photoElements.filter((value) => value.category === state));
+  let Portfolio = {
+    filters: ['All', 'Websites', "Flayers", "Business Cards"],
+    selected: state,
+    projects: statePhoto,
+    onSelectFilter: (filter) => {
+      setState(state = filter);
+      if (state === "All") {
+        setStatePhoto(statePhoto = photoElements)
+      } else {
+        setStatePhoto(statePhoto = photoElements.filter((value) => value.category === state));
+      }  
   }
 }
 
